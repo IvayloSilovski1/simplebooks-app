@@ -1,0 +1,26 @@
+<div class="container">
+  <h2>Search Authors</h2>
+  <form action="/authors" method="GET" class="row mb-3" style="width: 40rem">
+    <div class="col-md-6 col-lg-12 my-2">
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        name="email"
+        placeholder="Enter authors's email address"
+        value="<%= searchOptions.email %>"
+      />
+    </div>
+    <div class="col-md-4 col-lg-3 my-2">
+      <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+  </form>
+</div>
+<br />
+
+<% authors.forEach(author => { %>
+<div>
+  <p>Name: <%= author.name %></p>
+  <p>Email: <%= author.email %></p>
+</div>
+<% }) %>
